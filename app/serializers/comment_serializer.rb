@@ -1,5 +1,6 @@
 class CommentSerializer < ActiveModel::Serializer
-  attributes :id
-  has_one :recipe
+  attributes :id, :description
+
+  belongs_to :recipe
   has_one :user
 end

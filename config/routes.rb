@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  # resources :comments
+  resources :comments, only: [:index]
   # resources :recipe_tags
-  # resources :tags
-  resources :recipes, only: [:destroy]
+  resources :tags, only: [:create, :index]
+  resources :recipes, only: [:destroy, :create, :update, :index]
   resources :users, only: [:index]
 
   post "/login", to: "sessions#create"

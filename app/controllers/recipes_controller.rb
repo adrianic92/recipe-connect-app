@@ -15,6 +15,11 @@ class RecipesController < ApplicationController
         recipe.update(recipe_update_params)
         render json: recipe
     end
+
+    def index
+        recipes = Recipe.all
+        render json: recipes
+    end
     
     private
 
