@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # resources :comments
   # resources :recipe_tags
   # resources :tags
-  # resources :recipes
+  resources :recipes, only: [:destroy]
   resources :users, only: [:index]
 
   post "/login", to: "sessions#create"
