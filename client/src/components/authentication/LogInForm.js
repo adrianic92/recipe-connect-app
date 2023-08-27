@@ -1,6 +1,9 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
+import { UserContext } from "../context/User";
 
-function LogInForm({setNewUser, setUser}) {
+function LogInForm({setNewUser}) {
+
+    const {setUser} = useContext(UserContext);
 
     const [formData, setFormData] = useState({
         username: "",
@@ -59,7 +62,7 @@ function LogInForm({setNewUser, setUser}) {
                 </div>
                 <div>
                     <label>Password:</label>
-                    <input type="text" autoComplete="password" name="password" onChange={handleChange}/>
+                    <input type="password" autoComplete="password" name="password" onChange={handleChange}/>
                 </div>
                 <div>
                     <button type="submit">Submit</button>

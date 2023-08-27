@@ -1,11 +1,13 @@
 import React, {useContext} from "react";
 import { UserContext } from "../context/User";
 import LogIn from "../authentication/LogIn";
+import LoggedIn from "../access/LoggedIn";
 
 
 function Main() {
 
-    const user = useContext(UserContext);
+    const {user} = useContext(UserContext);
+    console.log(user)
 
     if (!user) {
         return (
@@ -14,7 +16,7 @@ function Main() {
     } else { 
         return (
             <div>
-                <h1>Hello World!</h1>
+                <LoggedIn />
             </div>
         )
     }
