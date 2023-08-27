@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import LogIn from './components/authentication/LogIn';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -15,6 +16,7 @@ function App() {
   return (
     <div>
       <h1>Hello World!</h1>
+      <LogIn />
     </div>
   );
 }
