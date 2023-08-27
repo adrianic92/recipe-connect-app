@@ -2,14 +2,14 @@ import React, {useState} from "react";
 import LogInForm from "./LogInForm";
 import SignInForm from "./SignUpForm";
 
-function LogIn() {
+function LogIn({setUser}) {
 
     const [newUser, setNewUser] = useState(false)
 
     return (
         <div>
             { !newUser ? 
-            <LogInForm setNewUser={setNewUser} /> :
+            <LogInForm setNewUser={setNewUser} setUser={setUser}/> :
             <SignInForm setNewUser={setNewUser} />}
         </div>
     )
