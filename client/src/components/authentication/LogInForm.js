@@ -1,16 +1,16 @@
 import React, {useState, useContext} from "react";
 import { UserContext } from "../context/User";
 
-function LogInForm({setNewUser}) {
+function LogInForm({setSignUp}) {
 
     const {setUser} = useContext(UserContext);
-
+    const [errorMessages, setErrorMessages] = useState([])
     const [formData, setFormData] = useState({
         username: "",
         password: "",
     });
 
-    const [errorMessages, setErrorMessages] = useState([])
+    
 
     function handleChange(e) {
         const name = e.target.name;
@@ -69,7 +69,7 @@ function LogInForm({setNewUser}) {
                 </div>
             </form>
             {errorList}
-            <button onClick={() => setNewUser(true)}>Sign Up!</button>
+            <button onClick={() => setSignUp(true)}>Sign Up!</button>
         </div>
     )
 }

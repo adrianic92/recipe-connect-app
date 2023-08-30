@@ -23,6 +23,9 @@ function NavBar() {
                     <li>
                         <Link to='/' onClick={handleLogout}>Log Out</Link>
                     </li>
+                    <li>
+                        <Link to='/profile'>Profile</Link>
+                    </li>
                 </ul>
             </div>
         </div>

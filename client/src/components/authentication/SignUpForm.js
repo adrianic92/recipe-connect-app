@@ -1,8 +1,10 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import { yearArray, monthArray, dayArray } from "../algebra/Dates";
+import { UserContext } from "../context/User";
 
-function SignInForm({setNewUser}) {
-
+function SignInForm({setSignUp}) {
+    const { setUser } = useContext(UserContext)
+    const [errorMessages, setErrorMessages] = useState([])
     const [formData, setFormData] = useState({
         name: "",
         username: "",
@@ -30,17 +32,30 @@ function SignInForm({setNewUser}) {
             value = e.target.value;
         }
 
-
         setFormData({
             ...formData, 
             [name]: value,
         })
-        console.log(formData)
     }
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(formData)
+        
+        fetch("/signup", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData)
+        }).then( response => {
+            if (response.ok) {
+                response.json()
+                .then( data => setUser(data))
+            } else {
+                response.json()
+                .then( error => setErrorMessages(error.errors) )
+            }
+        })
     }
 
     function optionMaker(item){
@@ -52,6 +67,12 @@ function SignInForm({setNewUser}) {
     const years = yearArray().map(year => optionMaker(year))
     const months = monthArray().map(month => optionMaker(month))
     const days = dayArray().map(day => optionMaker(day))
+
+    const errorList = errorMessages.map( message => {
+        return (
+            <p key={message}>{message}</p>
+        )
+    })
 
     return (
         <div>
@@ -83,7 +104,8 @@ function SignInForm({setNewUser}) {
                     <button type="submit">Submit</button>
                 </div>
             </form>
-            <button onClick={() => setNewUser(false)}>Log In</button>
+            {errorList}
+            <button onClick={() => setSignUp(false)}>Log In</button>
         </div>
     )
 }
