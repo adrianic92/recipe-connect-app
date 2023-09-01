@@ -2,11 +2,11 @@ class UsersController < ApplicationController
     skip_before_action :authorize, only: [:create, :index]
     
     def show
-        render json: @current_user
+        render json: @current_user.with_attached_image
     end
 
     def index
-        users = User.all.with_attached_image
+        users = User.all
         render json: users
     end
 
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     end
 
     def find_user
-        @current_user
+        @current_user.with_attached_image
     end
 
 end
