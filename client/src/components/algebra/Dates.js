@@ -17,7 +17,7 @@ function monthArray(){
 
     for (let i = 1; i <= 12; i++ ) {
         let j = i.toString()
-        if (j.length == 1) {
+        if (j.length === 1) {
             j = "0" + j
         }
         months.push(j)
@@ -33,7 +33,7 @@ function dayArray() {
 
     for (let i = 1; i <= 31; i++ ) {
         let j = i.toString()
-        if (j.length == 1) {
+        if (j.length === 1) {
             j = "0" + j
         }
         days.push(j)

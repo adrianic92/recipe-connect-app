@@ -10,8 +10,6 @@ function LogInForm({setSignUp}) {
         password: "",
     });
 
-    
-
     function handleChange(e) {
         const name = e.target.name;
         let value = e.target.value;
@@ -20,7 +18,6 @@ function LogInForm({setSignUp}) {
             ...formData, 
             [name]: value,
         })
-        console.log(formData)
     }
 
     function handleSubmit(e) {
