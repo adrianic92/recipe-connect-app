@@ -1,17 +1,37 @@
 import React, {useState, useContext} from "react";
 import { UserContext } from "../context/User";
+import { useNavigate } from "react-router-dom";
 
 
 function EditBio(){
-    const {user} = useContext(UserContext)
+    const {user, setUser} = useContext(UserContext)
     const [bio, setBio] = useState(user.bio)
-
+    const navigate = useNavigate()
     function handleChange(e) {
         setBio(e.target.value)
     }
 
     function handleSubmit(e){
         e.preventDefault()
+        fetch("/user_update", {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({bio: bio})
+        }
+        ).then( resp => {
+            if (resp.ok) {
+                resp.json()
+                .then(data => {
+                    console.log(setUser(data))
+                    navigate("/profile")
+                })
+            } else {
+                resp.json()
+                .then( errors => console.log(errors))
+            }
+        })
     }
 
     return(

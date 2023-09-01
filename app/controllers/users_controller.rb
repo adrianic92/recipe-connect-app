@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :authorize, only: [:create, :index, :date]
+    skip_before_action :authorize, only: [:create, :index]
     
     def show
         render json: @current_user
@@ -20,11 +20,6 @@ class UsersController < ApplicationController
         user = find_user
         user.update(user_update_params)
         render json: user
-    end
-
-    def date
-        today = Date.today - 6570
-        render json: today
     end
 
     private

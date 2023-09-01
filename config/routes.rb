@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get "/me", to: "users#show"
   post "/signup", to: "users#create"
   patch "/user_update", to: "users#update"
-  get "/date", to: "users#date"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

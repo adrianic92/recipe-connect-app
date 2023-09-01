@@ -8,9 +8,12 @@ function Profile(){
     const { user } = useContext(UserContext)
     const navigate = useNavigate();
 
-    function handleClick() {
-        console.log("I was clicked!");
+    function handleBioClick() {
         navigate("/profile/editbio");
+    }
+
+    function handleImageClick() {
+        navigate("/profile/editimage");
     }
 
     return(
@@ -19,7 +22,7 @@ function Profile(){
                 <h1>{user.name}</h1>
             </div>
             <div>
-                {!user.image ? <img src={defaultUser} alt="Default"/>:<img src={user.image} alt="Default"/>}
+                <div>{!user.image ? <img src={defaultUser} alt="Default" onClick={handleImageClick}/>:<img src={user.image} alt="Profile" onClick={handleImageClick}/>}</div>
                 <h3>{ageFinder(user.date_of_birth)} Years Old</h3>
             </div>
             <div>
@@ -27,7 +30,7 @@ function Profile(){
                 {!user.bio ? <p>Tell the world who you are! </p> : user.bio}
             </div>
             <div>
-                <button onClick={handleClick}>Edit your Profile</button>
+                <button onClick={handleBioClick}>Edit your Bio</button>
             </div>
         </div>
     )
