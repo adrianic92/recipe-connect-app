@@ -29,6 +29,12 @@ function NavBar() {
                     <li>
                         <Link to='/profile'>Profile</Link>
                     </li>
+                    <li>
+                        <Link to='/myrecipes'>My Recipes</Link>
+                    </li>
+                    <li>
+                        <Link to='/recipes'>Recipes</Link>
+                    </li>
                 </ul>
             </div>
         </div>

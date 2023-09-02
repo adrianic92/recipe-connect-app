@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_one_attached :image
   has_secure_password
   has_many :recipes
+  has_many :comments
 
   validates :name, presence: true
   validates :username, presence: true

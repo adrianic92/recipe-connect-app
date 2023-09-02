@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 function EditBio(){
     const {user, setUser} = useContext(UserContext)
-    const [bio, setBio] = useState(user.bio)
+    const [bio, setBio] = useState(user.bio ? user.bio : "")
     const navigate = useNavigate()
     function handleChange(e) {
         setBio(e.target.value)

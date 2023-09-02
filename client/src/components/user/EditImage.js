@@ -3,7 +3,7 @@ import { UserContext } from "../context/User";
 import { useNavigate } from "react-router-dom";
 
 function EditImage(){
-    const {user, setUser} = useContext(UserContext)
+    const {setUser} = useContext(UserContext)
 
     const [newImage, setNewImage] = useState(null)
 

@@ -7,7 +7,6 @@ import LoggedIn from "../access/LoggedIn";
 function Main() {
 
     const {user} = useContext(UserContext);
-    console.log(user)
 
     if (!user) {
         return (
