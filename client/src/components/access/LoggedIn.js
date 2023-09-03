@@ -8,6 +8,7 @@ import EditBio from "../user/EditBio";
 import EditImage from "../user/EditImage";
 import UserRecipes from "../recipes/UserRecipes";
 import AllRecipes from "../recipes/AllRecipes";
+import SelectedRecipe from "../recipes/SelectedRecipe";
 
 function LoggedIn() {
 
@@ -31,6 +32,7 @@ function LoggedIn() {
                 <Route exact path="/profile/editimage" element={<EditImage />} />
                 <Route exact path="/myrecipes" element={<UserRecipes recipes={myRecipes}/>} />
                 <Route exact path="/recipes" element={<AllRecipes recipes={recipes}/>} />
+                <Route exact path="/recipes/:id" element={<SelectedRecipe recipes={recipes}/>} />
             </Routes>
         </div>
     )

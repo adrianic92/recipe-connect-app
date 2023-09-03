@@ -1,14 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function RecipeListAll({recipe}) {
 
     console.log(recipe)
+    const link = `/recipes/${recipe.id}`
 
     return(
         <div>
-            <h1>{recipe.name}</h1>
-            <h3>Ingredients:<br/>{recipe.ingredients}</h3>
-            <h3>Directions:<br/>{recipe.directions}</h3>
+            <h1><Link to={link}>{recipe.name} | {recipe.user.name}</Link></h1>
         </div>
     )
 }
