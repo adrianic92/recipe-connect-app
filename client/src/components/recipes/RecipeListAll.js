@@ -2,8 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function RecipeListAll({recipe}) {
-
-    console.log(recipe)
+    
     const link = `/recipes/${recipe.id}`
 
     return(
