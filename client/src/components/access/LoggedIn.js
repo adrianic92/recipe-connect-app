@@ -16,6 +16,10 @@ function LoggedIn() {
     const {user} = useContext(UserContext)
     const [recipes, setRecipes] = useState([])
 
+    if (!recipes) {
+        <h1>Loading...</h1>
+    }
+
     useEffect(()=> {
         fetch("/recipes")
         .then( resp => resp.json())

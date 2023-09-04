@@ -80,19 +80,19 @@ function SignInForm({setSignUp}) {
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Name:</label>
-                    <input type="text" autoComplete="name" name="name" onChange={handleChange}/>
+                    <input type="text" autoComplete="name" name="name" value={formData.name} onChange={handleChange}/>
                 </div>
                 <div>
                     <label>Username:</label>
-                    <input type="text" autoComplete="username" name="username" onChange={handleChange}/>
+                    <input type="text" autoComplete="username" name="username" value={formData.username} onChange={handleChange}/>
                 </div>
                 <div>
                     <label>Password:</label>
-                    <input type="password" autoComplete="password" name="password" onChange={handleChange}/>
+                    <input type="password" autoComplete="password" name="password" value={formData.password} onChange={handleChange}/>
                 </div>
                 <div>
                     <label>Password Confirmation:</label>
-                    <input type="password" autoComplete="password" name="passwordConfirmation" onChange={handleChange}/>
+                    <input type="password" autoComplete="password" name="passwordConfirmation" value={formData.passwordConfirmation} onChange={handleChange}/>
                 </div>
                 <div>
                     <label>Date of Birth (mm/dd/yyyy):</label>
