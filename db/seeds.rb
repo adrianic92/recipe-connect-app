@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-# puts "Seeding Data..."
+puts "Seeding Data..."
 
 # User.create([
 #   { username: 'potter', password: 'patronum', password_confirmation: 'patronum', name: 'Harry Potter', date_of_birth: "1980-07-31", bio: "Food is magical!" },
@@ -41,4 +41,11 @@
 #     { recipe_id: 3, user_id: 1, description: "This was so good and easy to make!"}
 # ])
 
-# puts "seeding complete!" 
+tags = ["Appetizer", "Salad", "Soup","Pasta", "Pizza", "Burger", "Sandwich", "Sushi", "Seafood", "BBQ", "Vegetarian", "Vegan", "Dessert", "Breakfast", "Brunch", "Italian", "Mexican", "Chinese", "Indian", "Japanese", "Thai", "Mediterranean", "Greek", "French", "Spanish", "Korean","American", "Fusion", "Healthy", "Comfort Food", "Spicy", "Grilled", "Roasted", "Fried", "Baked", "Savory", "Gourmet", "Street Food", "Fast Food", "Homemade", "Low Carb", "Gluten-Free", "Dairy-Free", "Nut-Free", "Quick", "Easy", "Family-Friendly", "Exotic", "Bitter", "Sour", "Tasty"]
+
+# Create tags
+tags.each do |tag|
+  Tag.create(name: tag)
+end
+
+puts "seeding complete!" 

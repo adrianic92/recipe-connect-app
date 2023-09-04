@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import { UserContext } from "../context/User";
 
 function NavBar() {
-    const {setUser} = useContext(UserContext)
+    const {user, setUser} = useContext(UserContext)
 
     function handleLogout() {
         fetch('/logout', {
@@ -19,12 +19,12 @@ function NavBar() {
     return (
         <div>
             <div>
+                <h1>Bon appetit, {user.name}!</h1>
+            </div>
+            <div>
                 <ul>
                     <li>
                         <Link to='/'>Home</Link>
-                    </li>
-                    <li>
-                        <Link to='/' onClick={handleLogout}>Log Out</Link>
                     </li>
                     <li>
                         <Link to='/profile'>Profile</Link>
@@ -34,6 +34,12 @@ function NavBar() {
                     </li>
                     <li>
                         <Link to='/recipes'>Recipes</Link>
+                    </li>
+                    <li>
+                        <Link to='/recipes/new'>Create Recipe</Link>
+                    </li>
+                    <li>
+                        <Link to='/' onClick={handleLogout}>Log Out</Link>
                     </li>
                 </ul>
             </div>

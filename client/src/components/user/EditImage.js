@@ -3,7 +3,7 @@ import { UserContext } from "../context/User";
 import { useNavigate } from "react-router-dom";
 
 function EditImage(){
-    const {setUser} = useContext(UserContext)
+    const {users, setUser,setUsers} = useContext(UserContext)
 
     const [newImage, setNewImage] = useState(null)
 
@@ -22,9 +22,23 @@ function EditImage(){
             method: "PATCH",
             body: formData
         }
-        ).then( resp => resp.json()).then(data =>{
-            console.log(setUser(data))
-            navigate("/profile")
+        ).then( resp => {
+            if (resp.ok) {
+                resp.json().then(data => {
+                    const updatedUsers = users.map( u => {
+                        if (parseInt(u.id) === parseInt(data.id)) {
+                            return data
+                        } 
+                        else {return u}
+                    })
+                    setUsers(updatedUsers)
+                    setUser(data)
+                    navigate("/profile")
+                })}
+            else {
+                resp.json()
+                .then( errors => console.log(errors))
+            }
         })
     }
 

@@ -9,6 +9,7 @@ import EditImage from "../user/EditImage";
 import UserRecipes from "../recipes/UserRecipes";
 import AllRecipes from "../recipes/AllRecipes";
 import SelectedRecipe from "../recipes/SelectedRecipe";
+import CreateRecipe from "../recipes/CreateRecipe";
 
 function LoggedIn() {
 
@@ -19,7 +20,7 @@ function LoggedIn() {
         fetch("/recipes")
         .then( resp => resp.json())
         .then( data => setRecipes(data))
-    }, [])
+    }, [user])
 
     const myRecipes = recipes.filter(recipe => parseInt(recipe.user_id) === parseInt(user.id))
     return (
@@ -33,6 +34,7 @@ function LoggedIn() {
                 <Route exact path="/myrecipes" element={<UserRecipes recipes={myRecipes}/>} />
                 <Route exact path="/recipes" element={<AllRecipes recipes={recipes}/>} />
                 <Route exact path="/recipes/:id" element={<SelectedRecipe recipes={recipes}/>} />
+                <Route exact path="/recipes/new" element={<CreateRecipe />} />
             </Routes>
         </div>
     )

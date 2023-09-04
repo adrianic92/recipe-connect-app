@@ -5,6 +5,7 @@ const UserContext = React.createContext();
 function UserProvider({children}) {
 
     const [user, setUser] = useState(null);
+    const [users, setUsers] = useState([])
 
     useEffect(() => {
         fetch("/me")
@@ -16,7 +17,17 @@ function UserProvider({children}) {
         })
     }, []);
 
-    return <UserContext.Provider value={{user, setUser}}>{children}</UserContext.Provider>;
+    useEffect(() => {
+        fetch("/users")
+        .then( resp => {
+            if (resp.ok) {
+                resp.json()
+                .then((data) => setUsers(data))
+            }
+        })
+    }, [])
+
+    return <UserContext.Provider value={{user, setUser, users, setUsers}}>{children}</UserContext.Provider>;
 }
 
 export { UserContext, UserProvider};
