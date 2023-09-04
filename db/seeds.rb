@@ -41,11 +41,11 @@ puts "Seeding Data..."
 #     { recipe_id: 3, user_id: 1, description: "This was so good and easy to make!"}
 # ])
 
-tags = ["Appetizer", "Salad", "Soup","Pasta", "Pizza", "Burger", "Sandwich", "Sushi", "Seafood", "BBQ", "Vegetarian", "Vegan", "Dessert", "Breakfast", "Brunch", "Italian", "Mexican", "Chinese", "Indian", "Japanese", "Thai", "Mediterranean", "Greek", "French", "Spanish", "Korean","American", "Fusion", "Healthy", "Comfort Food", "Spicy", "Grilled", "Roasted", "Fried", "Baked", "Savory", "Gourmet", "Street Food", "Fast Food", "Homemade", "Low Carb", "Gluten-Free", "Dairy-Free", "Nut-Free", "Quick", "Easy", "Family-Friendly", "Exotic", "Bitter", "Sour", "Tasty"]
+# tags = ["Appetizer", "Salad", "Soup","Pasta", "Pizza", "Burger", "Sandwich", "Sushi", "Seafood", "BBQ", "Vegetarian", "Vegan", "Dessert", "Breakfast", "Brunch", "Italian", "Mexican", "Chinese", "Indian", "Japanese", "Thai", "Mediterranean", "Greek", "French", "Spanish", "Korean","American", "Fusion", "Healthy", "Comfort Food", "Spicy", "Grilled", "Roasted", "Fried", "Baked", "Savory", "Gourmet", "Street Food", "Fast Food", "Homemade", "Low Carb", "Gluten-Free", "Dairy-Free", "Nut-Free", "Quick", "Easy", "Family-Friendly", "Exotic", "Bitter", "Sour", "Tasty"]
 
-# Create tags
-tags.each do |tag|
-  Tag.create(name: tag)
-end
+# # Create tags
+# tags.each do |tag|
+#   Tag.create(name: tag)
+# end
 
 puts "seeding complete!" 

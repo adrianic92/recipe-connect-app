@@ -1,6 +1,14 @@
 class RecipesController < ApplicationController
     def create
-        recipe = @current_user.recipe.create!(recipe_create_params)
+        tag_names = params[:tags]
+        tags = tag_names.map do |current|
+            Tag.find_or_create_by(name: current)
+        end
+
+        recipe = @current_user.recipes.create!(recipe_create_params)
+
+        recipe.tags << tags
+
         render json: recipe, status: :created
     end
 
@@ -24,7 +32,7 @@ class RecipesController < ApplicationController
     private
 
     def recipe_create_params
-        params.permit(:name, :ingredients, :directions)
+        params.permit(:name, :ingredients, :directions, :user_id)
     end
 
     def recipe_update_params
