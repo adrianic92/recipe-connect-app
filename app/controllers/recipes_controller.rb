@@ -6,8 +6,10 @@ class RecipesController < ApplicationController
         end
 
         recipe = @current_user.recipes.create!(recipe_create_params)
-
-        recipe.tags << tags
+        
+        if tags.length > 0
+            recipe.tags << tags
+        end
 
         render json: recipe, status: :created
     end

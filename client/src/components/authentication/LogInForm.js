@@ -55,11 +55,11 @@ function LogInForm({setSignUp}) {
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Username:</label>
-                    <input type="text" autoComplete="username" name="username" onChange={handleChange}/>
+                    <input type="text" autoComplete="username" name="username" value={formData.username} onChange={handleChange}/>
                 </div>
                 <div>
                     <label>Password:</label>
-                    <input type="password" autoComplete="password" name="password" onChange={handleChange}/>
+                    <input type="password" autoComplete="password" name="password" value={formData.password}  onChange={handleChange}/>
                 </div>
                 <div>
                     <button type="submit">Submit</button>

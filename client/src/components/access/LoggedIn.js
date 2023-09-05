@@ -37,8 +37,8 @@ function LoggedIn() {
                 <Route exact path="/profile/editimage" element={<EditImage />} />
                 <Route exact path="/myrecipes" element={<UserRecipes recipes={myRecipes}/>} />
                 <Route exact path="/recipes" element={<AllRecipes recipes={recipes}/>} />
-                <Route exact path="/recipes/:id" element={<SelectedRecipe recipes={recipes}/>} />
-                <Route exact path="/recipes/new" element={<CreateRecipe />} />
+                <Route exact path="/recipes/:id" element={<SelectedRecipe recipes={recipes} setRecipes={setRecipes}/>} />
+                <Route exact path="/recipes/new" element={<CreateRecipe recipes={recipes} setRecipes={setRecipes}/>} />
             </Routes>
         </div>
     )
