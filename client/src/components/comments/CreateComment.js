@@ -4,6 +4,7 @@ import { UserContext } from "../context/User";
 function CreateComment({recipe, recipes, setRecipes}) {
     const {user} = useContext(UserContext)
     const [newComment, setNewComment] = useState("")
+    const [errorMessages, setErrorMessages] = useState([])
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -23,7 +24,6 @@ function CreateComment({recipe, recipes, setRecipes}) {
             if (response.ok) {
                 response.json()
                 .then( data => {
-                    console.log(data)
                     const updatedRecipes = recipes.map( rec => {
                         if (parseInt(rec.id) === parseInt(parseInt(data.recipe_id))) {
                             console.log(rec)
@@ -36,10 +36,11 @@ function CreateComment({recipe, recipes, setRecipes}) {
                         }
                     })
                     setRecipes(updatedRecipes)
+                    setNewComment("")
                 })
             } else {
                 response.json()
-                .then( errors => console.log(errors) )
+                .then( error => setErrorMessages(error.errors) )
             }
         })
     }
@@ -47,6 +48,12 @@ function CreateComment({recipe, recipes, setRecipes}) {
     function handleChange(e) {
         setNewComment(e.target.value)
     }
+
+    const errorList = errorMessages.map( message => {
+        return (
+            <p key={message}>{message}</p>
+        )
+    })
 
     return (
         <div>
@@ -57,6 +64,7 @@ function CreateComment({recipe, recipes, setRecipes}) {
                 </label>
                 <button type="submit">Submit</button>
             </form>
+            {errorList}
         </div>
     )
 }

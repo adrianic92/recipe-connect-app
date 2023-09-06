@@ -23,8 +23,15 @@ function LoggedIn() {
 
     useEffect(()=> {
         fetch("/recipes")
-        .then( resp => resp.json())
-        .then( data => setRecipes(data))
+        .then( resp => {
+            if (resp.ok) {
+                resp.json()
+                .then( data => setRecipes(data) )
+            } else {
+                resp.json()
+                .then( errors => console.log(errors))
+            }
+        })
     }, [user])
 
     const myRecipes = recipes.filter(recipe => parseInt(recipe.user_id) === parseInt(user.id))

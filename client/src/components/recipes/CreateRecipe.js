@@ -14,6 +14,7 @@ function CreateRecipe({recipes, setRecipes}) {
         tags: [],
     })
     const navigate = useNavigate()
+    const [errorMessages, setErrorMessages] = useState([])
 
     function handleChange(e) {
         const name = e.target.name;
@@ -50,7 +51,7 @@ function CreateRecipe({recipes, setRecipes}) {
             }
             else {
                 resp.json()
-                .then( errors => console.log(errors))
+                .then( error => setErrorMessages(error.errors))
             }
         })
         
@@ -67,6 +68,12 @@ function CreateRecipe({recipes, setRecipes}) {
         obj.value = tag.name
         obj.label = tag.name
         return obj
+    })
+
+    const errorList = errorMessages.map( message => {
+        return (
+            <p key={message}>{message}</p>
+        )
     })
 
     return (
@@ -101,6 +108,7 @@ function CreateRecipe({recipes, setRecipes}) {
                     </label>
                     <button type="submit">Submit</button>
                 </form>
+                {errorList}
             </div>
         </div>
     )

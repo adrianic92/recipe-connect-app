@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import RecipeComment from "./RecipeComment";
 import RecipeTag from "./RecipeTag";
 import CreateComment from "../comments/CreateComment";
+import defaultUser from "../../images/defaultUser.png";
 
 function SelectedRecipe({recipes, setRecipes}) {
     const {id} = useParams()
@@ -10,6 +11,8 @@ function SelectedRecipe({recipes, setRecipes}) {
     if (!recipe) {
         return <h1>Recipe not found</h1>
     }
+
+    const image = recipe.user.image
 
     const allComments = recipe.comments.map(comment => {
         return (
@@ -25,15 +28,20 @@ function SelectedRecipe({recipes, setRecipes}) {
 
     return(
         <div>
-            <h1>{recipe.name}</h1>
-            <h4>{allTags}</h4>
-            <h2>Ingredients</h2>
-            <h3>{recipe.ingredients}</h3>
-            <h2>Directions</h2>
-            <h3>{recipe.directions}</h3>
-            <h2>Chef: {recipe.user.name}</h2>
-            <h3>Get to know the chef:</h3>
-            <p>{recipe.user.bio}</p>
+            <div>
+                <h1>{recipe.name}</h1>
+                <h4>{allTags}</h4>
+                <h2>Ingredients</h2>
+                <h3>{recipe.ingredients}</h3>
+                <h2>Directions</h2>
+                <h3>{recipe.directions}</h3>
+            </div>
+            <div>
+                <h2>Chef: {recipe.user.name}</h2>
+                <img src={image ? image : defaultUser }/>
+                <h3>Get to know the chef:</h3>
+                <p>{recipe.user.bio}</p>
+            </div>
             <h1>Comments:</h1>
             <ul>{allComments}</ul>
             <CreateComment recipe={recipe} recipes={recipes} setRecipes={setRecipes} />

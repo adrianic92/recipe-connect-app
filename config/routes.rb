@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :comments, only: [:index, :create]
+  resources :comments, only: [:index, :create, :destroy]
   # resources :recipe_tags
   resources :tags, only: [:create, :index]
   resources :recipes, only: [:destroy, :create, :update, :index]

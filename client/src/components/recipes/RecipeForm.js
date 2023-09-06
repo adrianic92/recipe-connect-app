@@ -7,6 +7,7 @@ function RecipeForm({recipe, recipes, setRecipes}) {
         ingredients: recipe.ingredients,
         directions: recipe.directions
     });
+    const [errorMessages, setErrorMessages] = useState([])
     
     function handleChange(e) {
         const name = e.target.name;
@@ -41,12 +42,16 @@ function RecipeForm({recipe, recipes, setRecipes}) {
 
             } else {
                 resp.json()
-                .then( errors => console.log(errors))
+                .then( error => setErrorMessages(error.errors))
             }
         })
     }
 
-    console.log(formData)
+    const errorList = errorMessages.map( message => {
+        return (
+            <p key={message}>{message}</p>
+        )
+    })
 
     return (
         <div>
@@ -69,6 +74,7 @@ function RecipeForm({recipe, recipes, setRecipes}) {
                     </label>
                     <button type="submit">Submit</button>
                 </form>
+                {errorList}
             </div>
         </div>
     )

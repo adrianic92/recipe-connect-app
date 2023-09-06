@@ -12,6 +12,9 @@ function UserProvider({children}) {
             if (resp.ok) {
                 resp.json()
                 .then((data) => setUser(data))
+            } else {
+                resp.json()
+                .then( errors => console.log(errors) )
             }
         })
     }, []);
