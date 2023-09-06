@@ -1,12 +1,14 @@
-import React from "react";
+import React, {useContext} from "react";
 import { useParams } from "react-router-dom";
 import RecipeComment from "./RecipeComment";
 import RecipeTag from "./RecipeTag";
 import CreateComment from "../comments/CreateComment";
+import { UserContext } from "../context/User";
 
 function SelectedRecipe({recipes, setRecipes}) {
     const {id} = useParams()
     const recipe = recipes.find(recipe => parseInt(id) === recipe.id)
+    const {user} = useContext(UserContext)
     if (!recipe) {
         return <h1>Recipe not found</h1>
     }

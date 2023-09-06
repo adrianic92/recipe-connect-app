@@ -1,18 +1,16 @@
-import React, {useContext} from "react";
-import { UserContext } from "../context/User";
+import React from "react";
 import defaultUser from "../../images/defaultUser.png"
 
 function RecipeComment({comment}) {
-    const {users} = useContext(UserContext)
-    const user = users.find( u => parseInt(u.id) === parseInt(comment.user_id))
+    console.log(comment)
 
     return (
         <li>
             <div>
-            {!user.image ? <img src={defaultUser} alt="Default"/>:<img src={user.image} alt="Profile"/>}
+            {!comment.user_image ? <img src={defaultUser} alt="Default"/>:<img src={comment.user_image} alt="Profile"/>}
             </div>
             <div>
-                <h4>{user.name}</h4>
+                <h4>{comment.user_name}</h4>
                 <p>{comment.description}</p>
             </div>
         </li>
