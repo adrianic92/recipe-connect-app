@@ -7,6 +7,8 @@ function EditBio(){
     const {user, setUsers, users, setUser} = useContext(UserContext)
     const [bio, setBio] = useState(user.bio ? user.bio : "")
     const navigate = useNavigate()
+    const [errorMessages, setErrorMessages] = useState([])
+
     function handleChange(e) {
         setBio(e.target.value)
     }
@@ -36,10 +38,16 @@ function EditBio(){
                         })}
             else {
                 resp.json()
-                .then( errors => console.log(errors) )
+                .then( error => setErrorMessages(error.errors))
             }
             })
         }
+
+    const errorList = errorMessages.map( message => {
+        return (
+            <p key={message}>{message}</p>
+        )
+    })
 
     return(
         <div>
@@ -49,6 +57,7 @@ function EditBio(){
                     <input type="text" value={bio} onChange={handleChange}></input>
                     <button type="submit">Submit</button>
                 </form>
+                {errorList}
             </div>
         </div>
     )

@@ -42,9 +42,11 @@ function SelectedRecipe({recipes, setRecipes}) {
                 <h3>Get to know the chef:</h3>
                 <p>{recipe.user.bio}</p>
             </div>
-            <h1>Comments:</h1>
-            <ul>{allComments}</ul>
-            <CreateComment recipe={recipe} recipes={recipes} setRecipes={setRecipes} />
+            <div>
+                <h1>Comments:</h1>
+                <ul>{allComments}</ul>
+                <CreateComment recipe={recipe} recipes={recipes} setRecipes={setRecipes} />
+            </div>
         </div>
     )
 }

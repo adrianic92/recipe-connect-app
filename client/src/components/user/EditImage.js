@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function EditImage(){
     const {setUser} = useContext(UserContext)
-
+    const [errorMessages, setErrorMessages] = useState([])
     const [newImage, setNewImage] = useState(null)
 
     const navigate = useNavigate()
@@ -30,10 +30,16 @@ function EditImage(){
                 })}
             else {
                 resp.json()
-                .then( errors => console.log(errors))
+                .then( error => setErrorMessages(error.errors))
             }
         })
     }
+
+    const errorList = errorMessages.map( message => {
+        return (
+            <p key={message}>{message}</p>
+        )
+    })
 
     return(
         <div>
@@ -48,6 +54,7 @@ function EditImage(){
                     </input>
                     {newImage === null ? null : <button type="submit">Submit</button>}
                 </form>
+                {errorList}
             </div>
             <div>
                 <h2>Image Preview:</h2>
