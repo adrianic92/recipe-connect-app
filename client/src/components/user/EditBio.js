@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 
 function EditBio(){
-    const {user, setUsers, users, setUser} = useContext(UserContext)
+    const {user, setUser} = useContext(UserContext)
     const [bio, setBio] = useState(user.bio ? user.bio : "")
     const navigate = useNavigate()
     const [errorMessages, setErrorMessages] = useState([])
@@ -26,16 +26,9 @@ function EditBio(){
             if (resp.ok) {
                 resp.json()
                 .then(data => {
-                    const updatedUsers = users.map( u => {
-                        if (parseInt(u.id) === parseInt(data.id)) {
-                            return data
-                        } 
-                        else {return u}
-                        })
-                            setUsers(updatedUsers)
-                            setUser(data)
-                            navigate("/profile")
-                        })}
+                    setUser(data)
+                    navigate("/profile")
+                    })}
             else {
                 resp.json()
                 .then( error => setErrorMessages(error.errors))

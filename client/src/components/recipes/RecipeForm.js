@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
 
 function RecipeForm({recipe, recipes, setRecipes}) {
 
@@ -8,6 +9,7 @@ function RecipeForm({recipe, recipes, setRecipes}) {
         directions: recipe.directions
     });
     const [errorMessages, setErrorMessages] = useState([])
+    const navigate = useNavigate()
     
     function handleChange(e) {
         const name = e.target.name;
@@ -20,7 +22,6 @@ function RecipeForm({recipe, recipes, setRecipes}) {
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(formData)
         fetch(`/recipes/${recipe.id}`, {
             method: "PATCH",
             headers: {
@@ -38,6 +39,7 @@ function RecipeForm({recipe, recipes, setRecipes}) {
                         } else { return rec }
                     })
                     setRecipes(updatedRecipes)
+                    navigate(`/recipes/${recipe.id}`)
                 })
 
             } else {
