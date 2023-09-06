@@ -7,7 +7,7 @@ function RecipeListMy({recipe, recipes, setRecipes, edit}) {
     const link = `/recipes/${recipe.id}`
 
     function handleEdit(){
-        console.log("Edit Button")
+        navigate(`/myrecipes/edit/${recipe.id}`)
     }
     
     function handleDelete(){

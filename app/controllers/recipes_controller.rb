@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
             Tag.find_or_create_by(name: current)
         end
 
-        recipe = @current_user.recipes.create!(recipe_create_params)
+        recipe = @current_user.recipes.create!(recipe_params)
         
         if tags.length > 0
             recipe.tags << tags
@@ -22,7 +22,7 @@ class RecipesController < ApplicationController
 
     def update
         recipe = find_recipe
-        recipe.update(recipe_update_params)
+        recipe.update(recipe_params)
         render json: recipe
     end
 
@@ -33,12 +33,8 @@ class RecipesController < ApplicationController
     
     private
 
-    def recipe_create_params
+    def recipe_params
         params.permit(:name, :ingredients, :directions)
-    end
-
-    def recipe_update_params
-        params.permit(:ingredients, :directions)
     end
 
     def find_recipe

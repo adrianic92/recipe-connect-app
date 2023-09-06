@@ -1,7 +1,7 @@
 import React from "react";
 import defaultUser from "../../images/defaultUser.png"
 
-function RecipeComment({comment}) {
+function RecipeComment({comment, recipe, recipes, setRecipes}) {
     console.log(comment)
 
     return (

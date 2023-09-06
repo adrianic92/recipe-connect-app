@@ -10,6 +10,7 @@ import UserRecipes from "../recipes/UserRecipes";
 import AllRecipes from "../recipes/AllRecipes";
 import SelectedRecipe from "../recipes/SelectedRecipe";
 import CreateRecipe from "../recipes/CreateRecipe";
+import EditRecipe from "../recipes/EditRecipe";
 
 function LoggedIn() {
 
@@ -39,6 +40,7 @@ function LoggedIn() {
                 <Route exact path="/recipes" element={<AllRecipes recipes={recipes}/>} />
                 <Route exact path="/recipes/:id" element={<SelectedRecipe recipes={recipes} setRecipes={setRecipes}/>} />
                 <Route exact path="/recipes/new" element={<CreateRecipe recipes={recipes} setRecipes={setRecipes}/>} />
+                <Route exact path="/myrecipes/edit/:id" element={<EditRecipe recipes={recipes} setRecipes={setRecipes}/>} />
             </Routes>
         </div>
     )

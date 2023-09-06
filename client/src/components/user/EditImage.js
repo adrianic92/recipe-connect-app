@@ -41,8 +41,12 @@ function EditImage(){
                 <form onSubmit={handleSubmit}>
                     <label>Edit Your Profile Image Here</label>
                     <input 
-                    type="file" onChange={handleChange}></input>
-                    <button type="submit">Submit</button>
+                    type="file" 
+                    onChange={handleChange}
+                    accept="image/*"
+                    >            
+                    </input>
+                    {newImage === null ? null : <button type="submit">Submit</button>}
                 </form>
             </div>
             <div>
