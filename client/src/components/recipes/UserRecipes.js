@@ -2,18 +2,16 @@ import React, {useState} from "react";
 import RecipeListMy from "./RecipeListMy";
 
 function UserRecipes({recipes, setRecipes}){
-    const [edit, setEdit] = useState(false)
+    const [edit, setEdit] = useState(true)
     const allMyRecipes = recipes.sort((a, b) => {
-        const nameA = a.name.toUpperCase(); // ignore upper and lowercase
-        const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+        const nameA = a.name.toUpperCase();
+        const nameB = b.name.toUpperCase();
         if (nameA < nameB) {
           return -1;
         }
         if (nameA > nameB) {
           return 1;
         }
-      
-        // names must be equal
         return 0;
       }).map( recipe => {
 
@@ -30,7 +28,7 @@ function UserRecipes({recipes, setRecipes}){
         <div className="profile">
             <div className="container">
                 <h1>User Recipes</h1>
-                <button onClick={handleClick}>{!edit? "Edit Mode" : "Cancel Edit Mode"}</button>
+                <button onClick={handleClick}>{edit? "Edit Mode" : "Cancel Edit Mode"}</button>
                 <div className="recipelist">
                     {allMyRecipes}
                 </div>

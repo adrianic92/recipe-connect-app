@@ -77,27 +77,18 @@ function CreateRecipe({recipes, setRecipes}) {
     })
 
     return (
-        <div>
-            <div>
+        <div className="profile">
+            <div className="create-recipe-container">
                 <h1>Create a Recipe</h1>
-            </div>
-            <div>
                 <form onSubmit={handleSubmit}>
-                    <label>
-                        Recipe Name:
-                        <input type="text" name="name" value={formData.name} onChange={handleChange}/>
-                    </label>
-                    <label>
-                        Ingredients:
-                        <textarea name="ingredients" value={formData.ingredients} onChange={handleChange}/>
-                    </label>
-                    <label>
-                        Directions:
-                        <textarea name="directions" value={formData.directions} onChange={handleChange} />
-                    </label>
-                    <label>
-                        Tags:
-                        <Select
+                    <label>Recipe Name:</label>
+                    <input type="text" name="name" value={formData.name} onChange={handleChange}/>
+                    <label>Ingredients:</label>
+                    <textarea name="ingredients" value={formData.ingredients} onChange={handleChange}/>
+                    <label>Directions:</label>
+                    <textarea name="directions" value={formData.directions} onChange={handleChange} />
+                    <label>Tags:</label>
+                    <Select
                             closeMenuOnSelect={false}
                             components={animatedComponents}
                             isMulti
@@ -105,7 +96,6 @@ function CreateRecipe({recipes, setRecipes}) {
                             default={formData.tags}
                             onChange={handleTagChange}
                         />
-                    </label>
                     <button type="submit">Submit</button>
                 </form>
                 {errorList}

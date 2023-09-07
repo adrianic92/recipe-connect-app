@@ -784,3 +784,75 @@ body {
   font-weight: 900;
   color: red;
 }
+
+.create-recipe-container {
+  justify-self: center;
+  align-self: center;
+  background-color: white;
+  border-radius: 2rem;
+  padding: 1rem 3rem 3rem 3rem;
+  display: grid;
+}
+
+.create-recipe-container h1 {
+  font-family: Great Vibes;
+  font-size: 5rem;
+  text-align: center;
+  top: 0;
+  margin: 1rem 1rem 0rem 1rem;
+  text-shadow: 4px 4px 4px #959292;
+}
+
+.create-recipe-container form {
+  display: grid;
+}
+
+.create-recipe-container button {
+  font-family: Raleway;
+  font-size: 1rem;
+  color: white;
+  background-color: rgba(159, 27, 130);
+  border-radius: 2rem;
+  padding: 1rem;
+  margin: 1rem 0rem 0rem 0rem;
+}
+
+.create-recipe-container button:hover {
+  background-color:  hsl(313, 71%, 21%);
+}
+
+.create-recipe-container form textarea {
+  font-size: 1.5rem;
+  font-family: Raleway;
+  max-height: 15vh;
+  height: 15vh;
+  width: 50vh;
+}
+
+.create-recipe-container form textarea::-webkit-scrollbar {
+  width: .5rem;
+}
+
+.create-recipe-container form textarea::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  border-radius: 10px;
+}
+
+.create-recipe-container form textarea::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+.create-recipe-container label {
+  height: 2rem;
+  margin: .5rem 0rem 0rem 0rem;
+  font-family: Raleway;
+  font-size: 1.5rem;
+}
+
+.create-recipe-container input {
+  height: 2rem;
+  margin: .5rem 0rem 0rem 0rem;
+  font-family: Raleway;
+  font-size: 1rem;
+}
