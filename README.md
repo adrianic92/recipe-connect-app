@@ -29,7 +29,7 @@ Users can delete their Comments from the database.
 - Run 'rails server' or 'rails s' to begin running the server.
 - Run 'npm install --prefix client' on your terminal to install dependencies
 - Run 'npm start --prefix client' on your terminal to open the SPA
-- Fork and Clone the back end repository --> Follow this link "https://github.com/adrianic92/restaurant-reviewer-app" to get to the repository
+- Fork and Clone the back end repository --> Follow this link "https://github.com/adrianic92/recipe-connect-app" to get to the repository
 
 ## Credits
 - Pexels at https://www.pexels.com/ for images
