@@ -14,7 +14,7 @@ class User < ApplicationRecord
 
   def over_eighteen
     if date_of_birth.present? && date_of_birth > Date.today - 18.years
-      errors.add(:date_of_birth, "You must be over 18 years old.")
+      errors.add(:date_of_birth, "- You must be at least 18 years old")
     end
   end
 end

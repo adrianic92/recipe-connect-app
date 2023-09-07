@@ -75,8 +75,8 @@ function SignInForm({setSignUp}) {
     })
 
     return (
-        <div>
-            <h1>Sign In Form</h1>
+        <div className="container">
+            <h1>Sign Up</h1>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Name:</label>
@@ -96,16 +96,18 @@ function SignInForm({setSignUp}) {
                 </div>
                 <div>
                     <label>Date of Birth (mm/dd/yyyy):</label>
-                    <select name="month" onChange={handleChange}>{months}</select>
-                    <select name="day" onChange={handleChange}>{days}</select>
-                    <select name="year" onChange={handleChange}>{years}</select>
+                    <div className="select">
+                        <select name="month" onChange={handleChange}>{months}</select>
+                        <select name="day" onChange={handleChange}>{days}</select>
+                        <select name="year" onChange={handleChange}>{years}</select>
+                    </div>
                 </div>
                 <div>
                     <button type="submit">Submit</button>
                 </div>
             </form>
             {errorList}
-            <button onClick={() => setSignUp(false)}>Log In</button>
+            <button className="signup" onClick={() => setSignUp(false)}>Log In</button>
         </div>
     )
 }

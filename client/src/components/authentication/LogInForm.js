@@ -50,8 +50,8 @@ function LogInForm({setSignUp}) {
     })
 
     return (
-        <div>
-            <h1>Log In Form</h1>
+        <div className="container">
+            <h1>Log In</h1>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Username:</label>
@@ -66,7 +66,7 @@ function LogInForm({setSignUp}) {
                 </div>
             </form>
             {errorList}
-            <button onClick={() => setSignUp(true)}>Sign Up!</button>
+            <button className="signup" onClick={() => setSignUp(true)}>Sign Up!</button>
         </div>
     )
 }

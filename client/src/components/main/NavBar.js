@@ -17,29 +17,29 @@ function NavBar() {
     }
 
     return (
-        <div>
+        <div className="nav">
             <div>
-                <h1>Bon appetit, {user.name}!</h1>
+                <h1 className="title">Recipe Connect</h1>
             </div>
             <div>
-                <ul>
+                <ul className="list">
                     <li>
-                        <Link to='/'>Home</Link>
+                        <Link className="link" to='/'>Home</Link>
                     </li>
                     <li>
-                        <Link to='/profile'>Profile</Link>
+                        <Link className="link" to='/profile'>Profile</Link>
                     </li>
                     <li>
-                        <Link to='/myrecipes'>My Recipes</Link>
+                        <Link className="link" to='/myrecipes'>My Recipes</Link>
                     </li>
                     <li>
-                        <Link to='/recipes'>Recipes</Link>
+                        <Link className="link" to='/recipes'>Recipes</Link>
                     </li>
                     <li>
-                        <Link to='/recipes/new'>Create Recipe</Link>
+                        <Link className="link" to='/recipes/new'>Create Recipe</Link>
                     </li>
                     <li>
-                        <Link to='/' onClick={handleLogout}>Log Out</Link>
+                        <Link className="link" to='/' onClick={handleLogout}>Log Out</Link>
                     </li>
                 </ul>
             </div>

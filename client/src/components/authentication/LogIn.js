@@ -7,7 +7,7 @@ function LogIn({setUser}) {
     const [signUp, setSignUp] = useState(false)
 
     return (
-        <div>
+        <div className="center">
             { !signUp ? 
             <LogInForm setSignUp={setSignUp} setUser={setUser}/> :
             <SignUpForm setSignUp={setSignUp} />}
