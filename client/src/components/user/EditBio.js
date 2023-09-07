@@ -43,8 +43,8 @@ function EditBio(){
     })
 
     return(
-        <div>
-            <div>
+        <div className="profile">
+            <div className="editcontainer">
                 <form onSubmit={handleSubmit}>
                     <label>Edit Your Bio Here</label>
                     <input type="text" value={bio} onChange={handleChange}></input>

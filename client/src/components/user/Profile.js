@@ -17,20 +17,20 @@ function Profile(){
     }
 
     return(
-        <div>
-            <div>
-                <h1>{user.name}</h1>
-            </div>
-            <div>
-                <div>{!user.image ? <img src={defaultUser} alt="Default" onClick={handleImageClick}/>:<img src={user.image} alt="Profile" onClick={handleImageClick}/>}</div>
-                <h3>{ageFinder(user.date_of_birth)} Years Old</h3>
-            </div>
-            <div>
-                <h3>Bio:</h3>
-                {!user.bio ? <p>Tell the world who you are! </p> : user.bio}
-            </div>
-            <div>
-                <button onClick={handleBioClick}>Edit your Bio</button>
+        <div className="profile">
+            <div className="profile-container">
+                <div className="profile-a">
+                    <h1>{user.name}</h1>
+                </div>
+                <div className="profile-b">
+                    {!user.image ? <img src={defaultUser} alt="Default" onClick={handleImageClick}/>:<img src={user.image} alt="Profile" onClick={handleImageClick}/>}
+                    <h3>{ageFinder(user.date_of_birth)} Years Old</h3>
+                </div>
+                <div className="profile-c">
+                    <h3>Bio:</h3>
+                    {!user.bio ? <p>Tell the world who you are!</p> : <p>{user.bio}</p>}
+                    <button className="biobutton" onClick={handleBioClick}>Edit your Bio</button>
+                </div>
             </div>
         </div>
     )
