@@ -9,7 +9,7 @@ function SignInForm({setSignUp}) {
         name: "",
         username: "",
         password: "",
-        passwordConfirmation: "",
+        password_confirmation: "",
         date_of_birth: "20230101"
     });
 
@@ -92,7 +92,7 @@ function SignInForm({setSignUp}) {
                 </div>
                 <div>
                     <label>Password Confirmation:</label>
-                    <input type="password" autoComplete="password" name="passwordConfirmation" value={formData.passwordConfirmation} onChange={handleChange}/>
+                    <input type="password" autoComplete="password" name="password_confirmation" value={formData.password_confirmation} onChange={handleChange}/>
                 </div>
                 <div>
                     <label>Date of Birth (mm/dd/yyyy):</label>

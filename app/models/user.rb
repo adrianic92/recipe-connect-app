@@ -1,11 +1,12 @@
 class User < ApplicationRecord
-  has_one_attached :image
   has_secure_password
+
+  has_one_attached :image
   has_many :recipes
   has_many :comments
 
   validates :name, presence: true
-  validates :username, presence: true
+  validates :username, presence: true, uniqueness: true
   validates :date_of_birth, presence: true
 
   validate :over_eighteen
