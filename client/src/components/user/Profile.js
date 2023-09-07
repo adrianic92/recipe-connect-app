@@ -24,6 +24,7 @@ function Profile(){
                 </div>
                 <div className="profile-b">
                     {!user.image ? <img src={defaultUser} alt="Default" onClick={handleImageClick}/>:<img src={user.image} alt="Profile" onClick={handleImageClick}/>}
+                    <p>Click On Your Image To Edit</p>
                     <h3>{ageFinder(user.date_of_birth)} Years Old</h3>
                 </div>
                 <div className="profile-c">
