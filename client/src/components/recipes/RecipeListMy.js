@@ -21,10 +21,9 @@ function RecipeListMy({recipe, recipes, setRecipes, edit}) {
     }
 
     return(
-        <div>
-            <h1><Link to={link}>{recipe.name} | {recipe.user.name}</Link></h1>
-            
-            { !edit ? null: <div>
+        <div className={ edit? null:"eachrecipe"}>
+            <h2><Link className="recipelinks" to={link}>{recipe.name} | {recipe.user.name}</Link></h2>
+            { edit ? null: <div className="editbuttons">
             <button onClick={handleEdit}>Edit</button>
             <button onClick={handleDelete}>Delete</button>
             </div>

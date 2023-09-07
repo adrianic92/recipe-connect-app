@@ -56,7 +56,7 @@ function CreateComment({recipe, recipes, setRecipes}) {
     })
 
     return (
-        <div>
+        <div className="new-comment">
             <h1>Insert Comment Here:</h1>
             <form onSubmit={handleSubmit}>
                 <label>

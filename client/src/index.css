@@ -5,6 +5,7 @@ body {
   background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1)), url("https://images.pexels.com/photos/349609/pexels-photo-349609.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   background-position: center;
   background-size: cover;
+  background-attachment:fixed;
 
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -120,6 +121,17 @@ body {
   display: grid;
 }
 
+.editrecipecontainer {
+  justify-self: center;
+  align-self: center;
+  background-color: white;
+  border-radius: 2rem;
+  padding: 1rem 3rem 3rem 3rem;
+  display: grid;
+}
+
+
+
 .editcontainer {
   justify-self: center;
   align-self: center;
@@ -136,7 +148,19 @@ body {
   display: grid;
 }
 
+.editrecipecontainer form {
+  display: grid;
+}
+
 .editcontainer form label {
+  font-family: Raleway;
+  font-weight: 900;
+  text-align: center;
+  font-size: 2rem;
+  margin: .5rem;
+}
+
+.editrecipecontainer form label {
   font-family: Raleway;
   font-weight: 900;
   text-align: center;
@@ -150,6 +174,28 @@ body {
   max-height: 55vh;
   height: 55vh;
   width: 50vh;
+}
+
+.editrecipecontainer form textarea {
+  font-size: 1.5rem;
+  font-family: Raleway;
+  max-height: 20vh;
+  height: 15vh;
+  width: 50vh;
+}
+
+.editrecipecontainer form textarea::-webkit-scrollbar {
+  width: .5rem;
+}
+
+.editrecipecontainer form textarea::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  border-radius: 10px;
+}
+
+.editrecipecontainer form textarea::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
 
 .editcontainer form textarea::-webkit-scrollbar {
@@ -311,11 +357,34 @@ body {
   margin: 1rem 6rem;
 }
 
+.recipeeditbutton {
+  font-family: Raleway;
+  font-size: 1rem;
+  color: white;
+  background-color: rgba(159, 27, 130);
+  border-radius: 2rem;
+  padding: 1rem 0rem;
+  margin: 0.2rem 6rem;
+}
+
+.recipeeditbutton:hover {
+  background-color: hsl(313, 71%, 56%);
+}
+
 .biobutton:hover {
   background-color: hsl(0, 0%, 90%);
 }
 
 .container h1 {
+  font-family: Great Vibes;
+  font-size: 5rem;
+  text-align: center;
+  top: 0;
+  margin: 1rem 1rem 0rem 1rem;
+  text-shadow: 4px 4px 4px #959292;
+}
+
+.editrecipecontainer h1 {
   font-family: Great Vibes;
   font-size: 5rem;
   text-align: center;
@@ -352,12 +421,65 @@ body {
   font-size: 1rem;
 }
 
+.editrecipecontainer input {
+  height: 2rem;
+  margin: .5rem 0rem 0rem 0rem;
+  font-family: Raleway;
+  font-size: 1.5rem;
+}
+
 .container p {
   text-align: center;
   margin: 0;
   margin: .5rem;
   font-weight: 900;
   color: red;
+}
+
+.recipelist {
+  overflow: auto;
+}
+
+.recipelist::-webkit-scrollbar {
+  width: .5rem;
+}
+
+.recipelist::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  border-radius: 10px;
+}
+
+.recipelist::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+.container h2 {
+  font-family: Raleway;
+}
+
+.eachrecipe {
+  border-style: dashed;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.editbuttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.recipelinks {
+  text-decoration: none;
+  color: black;
+}
+
+.recipelinks:active {
+  text-decoration: none;
+}
+
+.recipelinks:visited {
+  text-decoration: none;
 }
 
 .signup {
@@ -424,4 +546,241 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
+}
+
+.recipe {
+  display: grid;
+  width: 95vw;
+  height: 80vh;
+  /* background-color: #9f1b82; */
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 
+    "a a b"
+    "a a c";
+  gap: 0rem;
+}
+
+
+.recipe-container {
+  grid-area: a;
+  justify-self: center;
+  align-self: center;
+  background-color: white;
+  border-radius: 2rem;
+  padding: 1rem 3rem 1rem 3rem;
+  display: grid;
+  height: 80%;
+  width: 80%;
+  box-shadow: 8px 8px 8px black;
+  overflow: auto;
+}
+
+.recipe-container::-webkit-scrollbar {
+  width: .5rem;
+}
+
+.recipe-container::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  border-radius: 10px;
+  margin: 2rem;
+}
+
+.recipe-container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+
+.recipe-container h1 {
+  font-family: Great Vibes;
+  font-size: 2.5rem;
+  margin: 1rem 0rem 0rem 0rem;
+  padding: 0rem;
+}
+
+.recipe-container h2 {
+  font-family: Great Vibes;
+  font-size: 2rem;
+  margin: 0rem 0rem 0rem 0rem;
+  padding: 0rem;
+  align-self: center;
+}
+
+.recipe-container h3 {
+  font-family: Raleway;
+  font-size: 1.5rem;
+  margin: 0rem 0rem 0rem 0rem;
+  padding: 0rem;
+  align-self: self-start;
+}
+
+.recipe-container h4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 0rem;
+}
+
+.recipe-container h4 li {
+  color: white;
+  text-shadow: 4px 4px 4px black;
+  list-style-type: none;
+  background-color: #9f1b82;
+  margin: 0rem;
+  padding: .3rem;
+  justify-self: center;
+  align-self: center;
+}
+
+
+.recipe-chef-container {
+  grid-area: b;
+  justify-self: center;
+  align-self: center;
+  background-color: white;
+  border-radius: 2rem;
+  padding: 1rem 3rem 1rem 3rem;
+  display: grid;
+  height: 80%;
+  width: 40vw;
+  max-width: 100vw;
+  box-shadow: 8px 8px 8px black;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.recipe-chef-container img {
+  max-height: 20vh;
+  max-width: 20vw;
+  margin: 0rem 1rem 0rem 0rem;
+}
+
+.recipe-chef-container p {
+  overflow: auto;
+  height: 20vh;
+  margin: 0rem;
+}
+
+.recipe-chef-container h3 {
+  font-family: Great Vibes;
+  font-size: 1.5rem;
+}
+
+.recipe-chef-container p::-webkit-scrollbar {
+  width: .5rem;
+}
+
+.recipe-chef-container p::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  border-radius: 10px;
+}
+
+.recipe-chef-container p::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+.recipe-comments-container {
+  grid-area: c;
+  justify-self: center;
+  align-self: center;
+  background-color: white;
+  border-radius: 2rem;
+  padding: 1rem 3rem 1rem 3rem;
+  display: grid;
+  height: 45vh;
+  width: 40vw;
+  max-width: 100vw;
+  box-shadow: 8px 8px 8px black;
+  grid-template-columns: 1fr;
+}
+
+.recipe-comments-container img {
+  max-height: 25vh;
+}
+
+.recipe-comments-container ul {
+  padding-left: 0rem;
+  overflow: auto;
+  margin: 0rem;
+}
+
+.recipe-comments-container h1{
+  font-family: Great Vibes;
+  margin: .5rem;
+}
+
+.recipe-comments-container ul::-webkit-scrollbar {
+  width: .5rem;
+}
+
+.recipe-comments-container ul::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  border-radius: 10px;
+}
+
+.recipe-comments-container ul::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+.each-comment {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 10vh 1fr;
+  border-style: solid;
+  border-width: .1rem;
+  margin: 1rem;
+}
+
+.each-comment img {
+  height: 10vh;
+  width: 10vh;
+  justify-self: center;
+  align-self: center;
+  object-fit: cover;
+}
+
+.each-comment div {
+  margin: 0rem;
+  padding: 0rem;
+  height: 10vh;
+}
+
+.each-comment h4 {
+  margin: .5rem;
+}
+
+.each-comment p {
+  margin: .5rem;
+}
+
+.new-comment form textarea {
+  font-size: 1.5rem;
+  font-family: Raleway;
+  max-height: 20vh;
+  height: 10vh;
+  width: 30vw;
+}
+
+.new-comment form {
+  display: grid;
+  grid-template-columns: 30vw 12vw;
+}
+
+.new-comment button {
+  font-family: Raleway;
+  font-size: 1.2rem;
+  color: white;
+  background-color: rgb(159, 27, 130);
+  border-radius: 1rem;
+  padding: 1rem 0rem;
+  margin: 1rem 1rem;
+}
+
+.new-comment p {
+  text-align: left;
+  margin: 0;
+  font-weight: 900;
+  color: red;
 }

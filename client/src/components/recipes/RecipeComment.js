@@ -26,8 +26,8 @@ function RecipeComment({comment, recipe, recipes, setRecipes}) {
 
 
     return (
-        <li>
-            <div>
+        <li className="each-comment">
+            <div className="comment-image-container">
             {!comment.user_image ? <img src={defaultUser} alt="Default"/>:<img src={comment.user_image} alt="Profile"/>}
             </div>
             <div>

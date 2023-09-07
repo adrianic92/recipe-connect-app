@@ -27,25 +27,27 @@ function SelectedRecipe({recipes, setRecipes}) {
     })
 
     return(
-        <div>
-            <div>
-                <h1>{recipe.name}</h1>
-                <h4>{allTags}</h4>
-                <h2>Ingredients</h2>
-                <h3>{recipe.ingredients}</h3>
-                <h2>Directions</h2>
-                <h3>{recipe.directions}</h3>
-            </div>
-            <div>
-                <h2>Chef: {recipe.user.name}</h2>
-                <img src={image ? image : defaultUser }/>
-                <h3>Get to know the chef:</h3>
-                <p>{recipe.user.bio}</p>
-            </div>
-            <div>
-                <h1>Comments:</h1>
-                <ul>{allComments}</ul>
-                <CreateComment recipe={recipe} recipes={recipes} setRecipes={setRecipes} />
+        <div className="profile">
+            <div className="recipe">
+                <div className="recipe-container">
+                    <h1>{recipe.name}</h1>
+                    <h4>{allTags}</h4>
+                    <h2>Ingredients</h2>
+                    <h3>{recipe.ingredients}</h3>
+                    <h2>Directions</h2>
+                    <h3>{recipe.directions}</h3>
+                </div>
+                <div className="recipe-chef-container">
+                    <h3>Chef: {recipe.user.name}</h3>
+                    <h3>Get to know the chef:</h3>
+                    <img src={image ? image : defaultUser }/>
+                    <p>{recipe.user.bio}</p>
+                </div>
+                <div className="recipe-comments-container">
+                    <h1>Comments:</h1>
+                    <ul>{allComments}</ul>
+                    <CreateComment recipe={recipe} recipes={recipes} setRecipes={setRecipes} />
+                </div>
             </div>
         </div>
     )

@@ -7,7 +7,7 @@ function RecipeListAll({recipe}) {
 
     return(
         <div>
-            <h1><Link to={link}>{recipe.name} | {recipe.user.name}</Link></h1>
+            <h2><Link className="recipelinks" to={link}>{recipe.name} | {recipe.user.name}</Link></h2>
         </div>
     )
 }

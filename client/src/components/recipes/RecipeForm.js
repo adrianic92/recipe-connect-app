@@ -56,27 +56,20 @@ function RecipeForm({recipe, recipes, setRecipes}) {
     })
 
     return (
-        <div>
-            <div>
+        <div className="profile">
+            <div className="editrecipecontainer">
                 <h1>Edit Recipe</h1>
-            </div>
-            <div>
                 <form onSubmit={handleSubmit}>
-                    <label>
-                        Name:
-                        <input type="text" name="name" value={formData.name} onChange={handleChange}></input>
-                    </label>
-                    <label>
-                        Ingredients:
-                        <textarea type="text" name="ingredients" value={formData.ingredients}  onChange={handleChange}></textarea>
-                    </label>
-                    <label>
-                        Directions:
-                        <textarea type="text" name="directions" value={formData.directions} onChange={handleChange}></textarea>
-                    </label>
-                    <button type="submit">Submit</button>
+                    <label>Name:</label>
+                    <input type="text" name="name" value={formData.name} onChange={handleChange}></input>
+                    <label>Ingredients:</label>
+                    <textarea type="text" name="ingredients" value={formData.ingredients}  onChange={handleChange}></textarea>
+                    <label>Directions:</label>
+                    <textarea type="text" name="directions" value={formData.directions} onChange={handleChange}></textarea>
+                    <button className="recipeeditbutton" type="submit">Submit</button>
                 </form>
                 {errorList}
+                <button className="recipeeditbutton" onClick={() => navigate("/myrecipes")}>Cancel Edit</button>
             </div>
         </div>
     )
