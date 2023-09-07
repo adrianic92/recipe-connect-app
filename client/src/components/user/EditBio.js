@@ -47,8 +47,8 @@ function EditBio(){
             <div className="editcontainer">
                 <form onSubmit={handleSubmit}>
                     <label>Edit Your Bio Here</label>
-                    <input type="text" value={bio} onChange={handleChange}></input>
-                    <button type="submit">Submit</button>
+                    <textarea type="text" value={bio} onChange={handleChange} />
+                    <button className="bioeditbutton" type="submit">Submit</button>
                 </form>
                 {errorList}
             </div>
