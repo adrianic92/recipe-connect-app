@@ -42,23 +42,22 @@ function EditImage(){
     })
 
     return(
-        <div>
-            <div>
-                <form onSubmit={handleSubmit}>
-                    <label>Edit Your Profile Image Here</label>
-                    <input 
-                    type="file" 
-                    onChange={handleChange}
-                    accept="image/*"
-                    >            
-                    </input>
-                    {newImage === null ? null : <button type="submit">Submit</button>}
-                </form>
-                {errorList}
-            </div>
-            <div>
-                <h2>Image Preview:</h2>
-                {newImage? <img alt="new" src={URL.createObjectURL(newImage)}/> : null}
+        <div className="profile">
+            <div className="editimagecontainer">
+                    <form className="editimageform" onSubmit={handleSubmit}>
+                        <label className="margin">Profile Image Edit</label>
+                        <input 
+                        type="file" 
+                        onChange={handleChange}
+                        accept="image/*"
+                        className="file-input"
+                        >            
+                        </input>
+                        {newImage === null ? null : <button className="bioeditbutton" type="submit">Submit</button>}
+                    </form>
+                    {errorList}
+                    <h2>Image Preview:</h2>
+                    {newImage? <img alt="new" src={URL.createObjectURL(newImage)}/> : null}
             </div>
         </div>
     )

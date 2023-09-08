@@ -856,3 +856,77 @@ body {
   font-family: Raleway;
   font-size: 1rem;
 }
+
+.editimagecontainer {
+  justify-self: center;
+  align-self: center;
+  background-color: white;
+  border-radius: 2rem;
+  padding: 1rem 3rem 3rem 3rem;
+  display: grid;
+  text-align: center;
+  box-shadow: 8px 4px black;
+}
+
+.editimagecontainer img {
+  height: 20vh;
+  width: 20vh;
+  justify-self: center;
+  align-self: center;
+  object-fit: cover;
+}
+
+.editimageform {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.margin {
+  margin: 1rem;
+  font-family: Great Vibes;
+  font-size: 3rem;
+  font-weight: 900;
+  text-shadow: 4px 4px 4px rgb(159, 159, 159);
+}
+
+.align-center {
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+}
+
+.editimageform button{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.editimageform input {
+  display: grid;
+
+}
+
+.editimageform input::file-selector-button {
+  text-align: center;
+}
+
+.file-input{
+  font-family: Raleway;
+  font-size: 1.2rem;
+}
+
+.file-input::file-selector-button {
+  font-family: Raleway;
+  font-size: 1.2rem;
+  color: white;
+  background-color: rgb(159, 27, 130);
+  border-radius: 2rem;
+  padding: 1rem 1rem;
+}
+
+.file-input::file-selector-button:hover {
+  background-color: hsl(313, 71%, 56%);
+}
