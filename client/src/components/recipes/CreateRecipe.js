@@ -72,7 +72,7 @@ function CreateRecipe({recipes, setRecipes}) {
 
     const errorList = errorMessages.map( message => {
         return (
-            <p key={message}>{message}</p>
+            <p className="error" key={message}>{message}</p>
         )
     })
 
