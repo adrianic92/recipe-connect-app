@@ -22,7 +22,7 @@ class RecipesController < ApplicationController
 
     def update
         recipe = find_recipe
-        recipe.update(recipe_params)
+        recipe.update!(recipe_params)
         render json: recipe
     end
 
