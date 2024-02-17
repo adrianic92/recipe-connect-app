@@ -25,11 +25,12 @@ Users can delete their Comments from the database.
 
 ## Installation Instructions
 - Fork and Clone this repository
-- Run 'bundle install' on your terminal to install dependencies
+- Prior to running commands, make sure you have Ruby, Rails, and PostgreSQL installed on your computer.
+- Run 'bundle install' on your terminal to install dependencies.
+- Run 'sudo service postgresql start' to begin PostgreSQL.
 - Run 'rails server' or 'rails s' to begin running the server.
-- Run 'npm install --prefix client' on your terminal to install dependencies
-- Run 'npm start --prefix client' on your terminal to open the SPA
-- Fork and Clone the back end repository --> Follow this link "https://github.com/adrianic92/recipe-connect-app" to get to the repository
+- Run 'npm install --prefix client' on your terminal to install dependencies.
+- Run 'npm start --prefix client' on your terminal to open the SPA.
 
 ## Credits
 - Pexels at https://www.pexels.com/ for images
