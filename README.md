@@ -34,6 +34,3 @@ Users can delete their Comments from the database.
 
 ## Credits
 - Pexels at https://www.pexels.com/ for images
-
-
-

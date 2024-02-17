@@ -3,7 +3,7 @@ import { UserContext } from "../context/User";
 import NavBar from "../main/NavBar";
 import { Route, Routes } from "react-router-dom";
 import Profile from "../user/Profile";
-import Home from "../main/Home"
+import Home from "../main/Home";
 import EditBio from "../user/EditBio";
 import EditImage from "../user/EditImage";
 import UserRecipes from "../recipes/UserRecipes";
